@@ -35,6 +35,7 @@ var ImageDiff = function () {
    * @public
    * @constructor
    */
+
   function ImageDiff(domElem, before, after, mode) {
     this.domElems = {
       before: $(domElem, '.image-diff__before img'),
@@ -206,18 +207,27 @@ function searchCore() {
         .done(function (data) {
             // console.log(data);
             var thumbs = [];
+            var accent = []
+            var contentSite = []
+            var imName = []
             var items = data.value.slice(0, 2);
             for (var i = 0; i < items.length; i++) {
                 // console.log(items[i]);
                 var currentItems = items[i];
                 thumbers = currentItems.contentUrl;
+                accenters = currentItems.accentColor
+                contenters = currentItems.hostPageDisplayUrl
+                namers = currentItems.name
                 thumbs.push(thumbers)
+                accent.push(accenters)
+                contentSite.push(contenters)
+                imName.push(namers)
                 document.getElementById('im').src = thumbs[0];
                 jQuery("#list_first").remove();                       // dynamically append the name of the image(source) to a list element in the
                                                                       // description div and remove this again when a new one is selected
                                                                       // in this case it is for the source of the image but you could also do it
                                                                       // for a custom description for the image
-                // jQuery("#description").append('<li id="list_first"><strong> Image 1: </strong>' + thing + '</li>');
+                jQuery("#core").append('<p id="list_first"><strong style="color:darkred"> Image 1: </strong>' + '<br><b>Name: </b>' + imName[0] + '<br><b>Accent color: </b>' + accent[0] + '<br><b>Host site: </b>' + '<a href="' + contentSite[0] + '" target="_blank">' + contentSite[0] + '</a></p>');
                 document.getElementById("brightness-slider").value = 1;   // set brightness back to 0 when image is changed
                 if (document.getElementById("zooming").value !== "100%") {
                     document.getElementById("zooming").value = "100%";        // Only when image 1 is changed: set zoom back to 100%
@@ -247,7 +257,7 @@ function searchCore() {
                 document.getElementById('comp').src = thumbs[1];
                 //document.getElementById("image-diff").style.content = "Image 2";  //try to change content dynamically but does not work
                 jQuery("#list_second").remove();
-                // jQuery("#description").append('<li id="list_second"><strong> Image 2: </strong>' + thing + '</li>');
+                jQuery("#core").append('<p id="list_second"><strong style="color:darkred"> Image 2: </strong>' + '<br><b>Name: </b>' + imName[1] + '<br><b>Accent color: </b>' + accent[1] + '<br><b>Host site: </b>' + '<a href="' + contentSite[1] + '" target="_blank">' + contentSite[1] + '</a></p>');
                 document.getElementById("brightness-slider").value = 1;         // brightness back to 0 when im2 is changed
 
                 var bright = document.getElementById('im');
