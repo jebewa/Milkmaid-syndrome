@@ -266,7 +266,10 @@ function searchCore() {
     return false
 }
 
+window.onload = function () {           // immediately load two first example images from Bing with the predetermined search query 'Impression sunrise'
+    searchCore()
 
+}
 
 //    function to change first(main) images source --> gets source from clicked thumbnail and assigns it to image src
 // update: from the selection button it either changes the source of the first image or the second with the source of the selected thumbnail
