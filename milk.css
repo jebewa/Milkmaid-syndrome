@@ -295,7 +295,7 @@ div#load_screen > div#loading {
 
 /* The Modal (background) */
 .modal {
-    display: none;  /* Hidden by default */
+    display: flex;  /* Hidden by default */
     position: inherit; /* Stay in place */
     z-index: 11; /* Sit on top -->update: I've put the z-index even higher so it would also sit on top when fading to image 2; is now even higher than the loading screen*/
     left: 0;
