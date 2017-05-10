@@ -216,7 +216,7 @@ function searchCore() {
                 var currentItems = items[i];
                 thumbers = currentItems.contentUrl;
                 accenters = currentItems.accentColor
-                contenters = currentItems.hostPageDisplayUrl
+                contenters = currentItems.hostPageUrl
                 namers = currentItems.name
                 thumbs.push(thumbers)
                 accent.push(accenters)
