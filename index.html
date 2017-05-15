@@ -15,6 +15,16 @@
         })
     </script>
     <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-98882616-1', 'auto');
+      ga('send', 'pageview');
+
+    </script> <!-- added google analytics tracking ID -->
 
 </head>
 
@@ -52,7 +62,7 @@
       </div></span>
         <form id="searching">
             Search heritage images from Bing
-            <input id="requestRef" type="text" value="Impression sunrise" name="ref"> <!--start with breugel value but should be dynamic with the responding project-->
+            <input id="requestRef" type="text" value="Impression sunrise Monet" name="ref"> <!--start with breugel value but should be dynamic with the responding project-->
             <span>
                 <button id="searchRef" onclick="return searchCore()">Search</button>
             <span><div id="core"></div></span> <!--Inside the modal content: this is where the first three results of the api will be appended + empty before new search-->
